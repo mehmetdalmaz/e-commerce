@@ -1,0 +1,17 @@
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Services.deps.json
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Services.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Services.pdb
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Core.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Data.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Core.pdb
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/bin/Debug/net9.0/Data.pdb
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.csproj.AssemblyReference.cache
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.AssemblyInfoInputs.cache
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.AssemblyInfo.cs
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.csproj.CoreCompileInputs.cache
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.csproj.Up2Date
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/refint/Services.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.pdb
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/ref/Services.dll
