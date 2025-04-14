@@ -1,9 +1,15 @@
-export default function Product(props: any) {
+import { IProduct } from "../model/IProduct";
+
+interface Props {
+  product: IProduct
+}
+
+export default function Product({product}: Props) {
     return (
   
       <>
-      <h3>{props.Product.name}</h3>
-      <p> {props.Product.price}</p>
+      <h3>{product.name}</h3>
+      <p> {product.price}</p>
       </>
   
     );

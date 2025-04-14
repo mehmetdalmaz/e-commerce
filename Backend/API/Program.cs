@@ -32,6 +32,8 @@ app.UseCors(opt => {
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseAuthorization();
 
 app.MapControllers();
