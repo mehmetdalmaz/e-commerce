@@ -15,3 +15,4 @@
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/refint/Services.dll
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.pdb
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/ref/Services.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Services/obj/Debug/net9.0/Services.sourcelink.json

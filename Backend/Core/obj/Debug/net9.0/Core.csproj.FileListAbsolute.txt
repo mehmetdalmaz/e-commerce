@@ -9,3 +9,4 @@
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Core/obj/Debug/net9.0/refint/Core.dll
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Core/obj/Debug/net9.0/Core.pdb
 /Users/mehmetdalmaz/Desktop/e-commerce/Backend/Core/obj/Debug/net9.0/ref/Core.dll
+/Users/mehmetdalmaz/Desktop/e-commerce/Backend/Core/obj/Debug/net9.0/Core.sourcelink.json

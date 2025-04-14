@@ -8,6 +8,5 @@ namespace Data.Abstract
 {
     public interface IProductService : IGenericService<Product>
     {
-        Task TGetListAsync();
     }
 }
