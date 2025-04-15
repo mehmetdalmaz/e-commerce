@@ -1,3 +1,4 @@
+using API.Middlewares;
 using Data.Abstract;
 using Data.Context;
 using Data.EntityFramwork;
@@ -15,6 +16,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandling>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
