@@ -11,5 +11,6 @@ namespace Services.Abstract
     {
      void AddItem(Cart cart, Product product, int quantity);
      void DeleteItem(Cart cart, int productId, int quantity);
+     Cart? GetCartByCustomerId(string customerId); // Yeni eklenen metot
     }
 }

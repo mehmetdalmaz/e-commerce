@@ -49,6 +49,12 @@ namespace Services.Concrete
 
         }
 
+        public Cart? GetCartByCustomerId(string customerId)
+        {
+            return _cartDAl.GetCartWithItems(customerId);
+        }
+
+
         public void TDelete(Cart t)
         {
             _cartDAl.Delete(t);
@@ -66,12 +72,12 @@ namespace Services.Concrete
 
         public void TInsert(Cart t)
         {
-            throw new NotImplementedException();
+            _cartDAl.Insert(t);
         }
 
         public void TUpdate(Cart t)
         {
-            throw new NotImplementedException();
+            _cartDAl.Update(t);
         }
     }
 }

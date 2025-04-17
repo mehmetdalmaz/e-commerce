@@ -8,6 +8,7 @@ namespace Data.Abstract
 {
     public interface ICartDal:IGenericDal<Cart>
     {
-        
+        Cart? GetCartWithItems(string customerId);
+
     }
 }
