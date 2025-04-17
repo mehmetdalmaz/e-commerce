@@ -5,6 +5,7 @@ import AboutPage from "../Pages/AboutPage";
 import ContactPage from "../Pages/ContactPage";
 import CatalogPage from "../Pages/Catalog/CatalogPage";
 import ProductDetails from "../Pages/Catalog/ProductDetails";
+import ShoppingCartPage from "../Pages/cart/ShoppingCartPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,9 @@ export const router = createBrowserRouter([
         { path: "about", element:<AboutPage/>},
         { path: "contact", element:<ContactPage/>},
         { path: "catalog", element:<CatalogPage/>},
-        { path: "catalog/:id", element:<ProductDetails/>}
+        { path: "catalog/:id", element:<ProductDetails/>},
+        { path: "cart", element:<ShoppingCartPage/>}
+
 
 
 

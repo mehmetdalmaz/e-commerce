@@ -19,7 +19,7 @@ const Catalog = {
 
 
 const Cart = {
-    get: queries.get("Cart"),
+    get: () => queries.get("Cart"),
     addItem: (productId: number, quantity = 1) => queries.post(`Cart?productId=${productId}&quantity=${quantity}`,{}),
 deleteItem:  (productId: number, quantity = 1) => queries.delete(`Cart?productId=${productId}&quantity=${quantity}`)
 
