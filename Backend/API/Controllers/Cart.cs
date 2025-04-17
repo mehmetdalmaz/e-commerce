@@ -70,8 +70,8 @@ namespace API.Controllers
 
             _cartService.DeleteItem(cart, productId, quantity);
             _cartService.TUpdate(cart);
-
-            return Ok();
+            var cartDto = _mapper.Map<CartDto>(cart);
+            return Ok(cartDto);
         }
 
         private string GetOrCreateCustomerId()

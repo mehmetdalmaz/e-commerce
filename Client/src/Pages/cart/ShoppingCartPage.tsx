@@ -1,26 +1,43 @@
-import { useEffect, useState } from "react"
-import request from "../../Api/Request"
-import { CircularProgress, IconButton, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
-import { Cart } from "../../model/ICart"
-import { Delete } from "@mui/icons-material"
+import {  Alert,  Button,  Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { AddCircleOutline, Delete, RemoveCircle } from "@mui/icons-material"
+import { useCartContext } from "../../Context/CartContext"
+import { useState } from "react";
+import request from "../../Api/Request";
+import { toast } from "react-toastify";
+import CartSummary from "./CartSummary";
 
 
 function ShoppingCartPage() {
-    const [cart, setCart] = useState<Cart | null>(null)
-    const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        request.Cart.get()
-        .then(cart => setCart(cart))
-        .catch(error => console.log(error))
-        .finally(() => setLoading(false))
-    },[])
+    const {cart,setCart} = useCartContext();
+    const [status,setStatus] = useState({loading:false,id:""})
 
 
-    if (loading) {
-        return <CircularProgress/>
+    function handleAddItem(productId: number, id: string)
+    {
+      setStatus({loading: true,id:id})
+
+      request.Cart.addItem(productId)
+      .then(cart => setCart(cart))
+      .catch(error => console.log(error))
+      .finally(()=> setStatus({loading: false,id:id}))
+
     }
-    if(!cart) return <h1>Sepetinizde ürün yok</h1>
+
+    function handleDeleteItem(productId: number,quantity = 1, id: string)
+    {
+
+      setStatus({loading: true,id:id})
+      
+      request.Cart.deleteItem(productId, quantity)
+      .then(cart => setCart(cart))
+      .catch(error => console.log(error))
+      .finally(()=> setStatus({loading: false,id:id}))
+    }
+
+
+    
+    if(cart?.cartItems.length===0) return <Alert severity="warning">Sepetinizde ürün bulunamadı</Alert>
 
 
 
@@ -38,7 +55,7 @@ function ShoppingCartPage() {
         </TableRow>
       </TableHead>
       <TableBody>
-        {cart.cartItems.map((item) => (
+        {cart?.cartItems.map((item) => (
           <TableRow
             key={item.productId}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -51,15 +68,36 @@ function ShoppingCartPage() {
               {item.name}
             </TableCell>
             <TableCell align="right">{item.price}₺</TableCell>
-            <TableCell align="right">{item.quantity}</TableCell>
+            <TableCell align="right">
+
+              <Button loading={status.loading && status.id === "add" + item.productId} 
+              onClick={()=> handleAddItem(item.productId, "add" + item.productId)}>
+              <AddCircleOutline/>
+              </Button>
+
+              {item.quantity}
+              
+              <Button loading={status.loading && status.id === "del" + item.productId} 
+              onClick={()=> handleDeleteItem(item.productId,1, "del" + item.productId)}>
+              <RemoveCircle/>
+              </Button>
+            </TableCell>
+
             <TableCell align="right">{item.price*item.quantity}₺</TableCell>
             <TableCell align="right">
-                <IconButton color="error">
+                <Button color="error" loading={status.loading && status.id === "del_all" + item.productId} 
+                onClick={()=> {
+                  handleDeleteItem(item.productId,item.quantity, "del_all" + item.productId,)
+                  toast.error("Ürün sepetinizden silindi")
+                  }}>
                     <Delete/>
-                </IconButton>
+                </Button>
             </TableCell>
           </TableRow>
+
         ))}
+         <CartSummary/>
+
       </TableBody>
     </Table>
   </TableContainer>
